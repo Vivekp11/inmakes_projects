@@ -1,0 +1,83 @@
+
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--    <title>Registration Form</title>-->
+<!--</head>-->
+<!--<body style="font-family: Arial, sans-serif; background-color: #f2f2f2;">-->
+
+<!--<div style="width: 300px; margin: 0 auto; padding: 20px; background-color: #ffffff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">-->
+
+<!--    <h2 style="text-align: center;">Registration</h2>-->
+
+<!--    <form action="signin" method="post" style="text-align: left;">-->
+<!--       {% csrf_token %}-->
+<!--        <label for="username" style="display: block; margin-bottom: 10px;">Username:</label>-->
+<!--        <input type="text" id="username" name="username" style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 4px;" required>-->
+
+<!--        <label for="username" style="display: block; margin-bottom: 10px;">firstname:</label>-->
+<!--        <input type="text" id="firstname" name="first_name" style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 4px;" required>-->
+
+<!--        <label for="username" style="display: block; margin-bottom: 10px;">lastname:</label>-->
+<!--        <input type="text" id="lastname" name="last_name" style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 4px;" required>-->
+
+
+<!--        <label for="email" style="display: block; margin-bottom: 10px;">Email:</label>-->
+<!--        <input type="email" id="email" name="email" style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 4px;" required>-->
+
+<!--        <label for="password" style="display: block; margin-bottom: 10px;">Password1:</label>-->
+<!--        <input type="password" id="password1" name="password1" style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 4px;" required>-->
+
+<!--        <label for="password" style="display: block; margin-bottom: 10px;">Password2:</label>-->
+<!--        <input type="password" id="password" name="password2" style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 4px;" required>-->
+
+
+<!--        <button type="submit" style="background-color: #4CAF50; color: #fff; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer;">Register</button>-->
+<!--    </form>-->
+<!--    {% for msg in messages %}-->
+<!--      <h1>{{msg}}</h1>-->
+<!--    {% endfor %}-->
+<!--</div>-->
+
+<!--</body>-->
+<!--</html>-->
+
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/log.css' %}">
+</head>
+<body>
+    <section class="container">
+        <div class="login-container">
+<!--            <div class="circle circle-one"></div>-->
+            <div class="form-container">
+<!--                 <img src="https://raw.githubusercontent.com/hicodersofficial/glassmorphism-login-form/master/assets/illustration.png" alt="illustration" class="illustration" /> -->
+                <h1 class="opacity">REGISTER</h1>
+                <form action="signin" method="post">
+                    {% csrf_token %}
+                    <input type="text" name="username" placeholder="USERNAME" />
+                    <input type="password" name="first_name" placeholder="FIRST NAME" />
+                    <input type="text" name="last_name" placeholder="LASTNAME" />
+                    <input type="password" name="email" placeholder="EMAIL" />
+                    <input type="text" name="password1" placeholder="PASSWORD" />
+                    <input type="password" name="password2" placeholder="CONFORM PASSWORD" />
+                    <button class="opacity">SUBMIT</button>
+                </form>
+                {% for msg in messages %}
+                    <h4>{{msg}}</h4>
+                {% endfor %}
+                <div class="register-forget opacity">
+
+                    <a href="">Already signin</a>
+                </div>
+            </div>
+<!--            <div class="circle circle-two"></div>-->
+        </div>
+        <div class="theme-btn-container"></div>
+    </section>
+</body>
+</html>
